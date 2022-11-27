@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascrip table </title>
+    <style>
+        body{
+            text-align: center;
+        }
+        table,tr,td{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            
+            border: 2px solid black;
+        }
+        table{
+            width: 45%;
+
+        }
+       
+    </style>
+</head>
+<body>
+    <button type="button" onclick="myfunc()" >click here</button>
+    <p id="demo"><strong>table appears here</strong></p>
+  
+    <script>
+        function myfunc(){
+        const a=['julli','bulli','chulli','sulli'];
+     let   text="<table>";
+        for(i=0;i<a.length;i++){
+text+="<tr>";
+text+="<td>"+i+"</td>"+"<td>"+a[i]+"</td>";
+text+="</tr>";
+        }
+        text +="</table>";
+        document.getElementById("demo").innerHTML=text;}
+    </script>
+ 
+</body>
+</html>
+<!--<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p>The best way to loop through an array is using a standard for loop:</p>
+
+<p id="demo"></p>
+
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fLen = fruits.length;
+
+let text = "<table>";
+for (let i = 0; i < fLen; i++) {
+text += "<tr>";
+  text += "<td>" + fruits[i] + "</td>";
+  text += "</tr>";
+}
+text += "</table>";
+
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>-->
