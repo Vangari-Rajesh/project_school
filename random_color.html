@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+   <title>rajesh's random backgroundColor</title>
+</head>
+<html>
+    <body id="demo" style="text-align: center;">
+   
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <button type="button" onclick="myfunc()" >click here to change bg-color</button>
+    <script>
+        function myfunc(){
+   var    a=Math.floor(Math.random() * 255) + 0;
+   var  b=Math.floor(Math.random() * 255) ;
+   var  c=Math.floor(Math.random() * 255) ;
+     var color='rgb(' + a + ',' + b + ',' + c + ')';
+    document.getElementById("demo").style.backgroundColor=color;}
+             </script>
+     
+   </body>
+</html>
