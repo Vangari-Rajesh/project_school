@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container{
+            margin: auto;
+            width: 200px;
+        }
+    </style>
+    <div class="container">
+        <button id="demo">Click Here To change The Background Color</button>
+    </div>
+    <script>
+        const b=document.getElementById("demo");
+        const a=document.body;
+        const colors=['red','green','yellow','blue','orange'];
+        b.addEventListener('click',background);
+        function background(){
+            const c=Math.floor(Math.random()*colors.length);
+            a.style.backgroundColor=colors[c];
+        }
+    </script>
+    
+</body>
+</html>
