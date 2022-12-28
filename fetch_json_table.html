@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch_Json_Display</title>
+    <style>
+        table,tr,td,th{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+        table{
+            width: 75%;
+
+        }
+    </style>
+</head>
+<body>
+    <table id="tab">
+
+    </table>
+    <h3>Employees with salary greater than 50000:</h3>
+    <ul id="sal"></ul>
+    <h3>Employees joined in the month of December:</h3>
+    <ul id="dec"></ul>
+
+    
+</body>
+<script>
+    var info;
+    fetch('https://rawcdn.githack.com/kmitprojectschool/sem12022/788c820e40a750fecb30433c8d346457b7859abc/employee.json')
+    .then(res => res.json()).then(data=> { 
+        info=data;
+        init();
+    });
+    function init(){
+        let data=info["Employees"];
+        let x="";
+        x+="<tr>"
+        for(let i in data[0])
+        {
+           x+= "<th>"+i+"</th>";
+        }
+        x+="</tr>";
+        for(let i of data)
+        {
+            x+="<tr>";
+            for(let j in i)
+            {
+                x+="<td>"+i[j]+"</td>";
+            }
+            x+="</tr>";
+        }
+        document.getElementById("tab").innerHTML=x;
+        salary(data);
+    }
+    function salary(data){
+        let x="";
+        let y="";
+        for(let i of data){
+            if(i["Salary"]>50000){
+                x+="<li>"+i["Name"]+"</li>";
+            }
+            if(i["DateOfJoining"].slice(3,5)=="12"){
+                y+="<li>"+i["Name"]+"</li>"
+            }
+        }
+        document.getElementById("sal") .innerHTML=x;
+        document.getElementById("dec").innerHTML=y;
+    }
+</script>
+</html>
